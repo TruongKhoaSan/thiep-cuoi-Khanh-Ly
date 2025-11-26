@@ -320,6 +320,94 @@ html, body {
     border-radius: 10px;
     overflow: hidden;
 }
+/* qr */
+/* Nút QR */
+.qr-button-container 
+{
+    margin-top: 30px;
+}
+.qr-btn {
+    padding: 10px 20px;
+    background: #ff4f81;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 79, 129, 0.5);
+    transition: 0.3s;
+}
+
+.qr-btn:hover {
+    transform: scale(1.08);
+    background: #ff1c63;
+}
+
+/* Nội dung QR ẩn ban đầu */
+.qr-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease, opacity 1s ease;
+    opacity: 0;
+    margin-top: 0;
+}
+
+/* Khi mở */
+.qr-content.show {
+    max-height: 400px; /* đủ chứa nội dung */
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.qr-flex {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.qr-item {
+    text-align: center;
+    opacity: 0;
+    transform: translateX(0);
+    transition: all 1s ease;
+}
+
+.qr-item img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255,79,129,0.4);
+}
+
+/* 2 ảnh di chuyển từ 2 bên */
+/* 2 ảnh di chuyển từ 2 bên với bounce */
+.qr-item.left.show {
+    opacity: 1;
+    animation: slideInLeft 0.8s forwards;
+}
+
+.qr-item.right.show {
+    opacity: 1;
+    animation: slideInRight 0.8s forwards;
+}
+
+/* Animation từ trái vào giữa */
+@keyframes slideInLeft {
+    0% { transform: translateX(-150%); }
+    60% { transform: translateX(20px); }
+    80% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+/* Animation từ phải vào giữa */
+@keyframes slideInRight {
+    0% { transform: translateX(150%); }
+    60% { transform: translateX(-20px); }
+    80% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
 
 
 
