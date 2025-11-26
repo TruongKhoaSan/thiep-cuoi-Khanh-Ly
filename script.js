@@ -185,6 +185,31 @@ toggleQR.addEventListener("click", () => {
     }
 });
 
+// timeline 
+const timelineItems = document.querySelectorAll('.timeline-item');
+
+function revealTimeline() {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  timelineItems.forEach((item, index) => {
+    const top = item.getBoundingClientRect().top;
+    if (top < triggerBottom) {
+      const img = item.querySelector('img');
+      
+      // Gán biến CSS để giữ rotate cho từng mốc
+      switch(index) {
+        case 0: img.style.setProperty('--rotate', '-15deg'); break;
+        case 1: img.style.setProperty('--rotate', '10deg'); break;
+        case 2: img.style.setProperty('--rotate', '-10deg'); break;
+      }
+
+      item.classList.add('show');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealTimeline);
+window.addEventListener('load', revealTimeline);
 
 
 
