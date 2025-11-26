@@ -1,0 +1,349 @@
+
+html, body {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 400px;
+    margin: 0 auto;
+    text-align:center;
+    position: relative;
+    background-color: antiquewhite;
+}
+
+/* Ảnh top */
+.top {
+    width: 100%;
+    height: 600px;
+    margin: 10px auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 1.2s ease, opacity 1.2s ease;
+}
+
+/* Chữ dưới ảnh top */
+.text {
+    width: 100%;
+    margin-top: 20px;
+    font-family: Courier;
+}
+
+/* Thư Mời Tiệc Cưới */
+.text_top {
+    font-size: clamp(20px, 5vw, 36px);
+    font-weight: bold;
+    color: #333;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 1.2s ease;
+    margin-bottom: 10px;
+}
+
+/* Dòng tên */
+.text-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+/* Chữ Tuấn Khanh & Cẩm Ly */
+.text1, .text2 {
+    font-size: clamp(18px, 4vw, 28px);
+    font-weight: bold;
+    color: #555;
+    opacity: 0;
+    position: relative;
+    transition: all 1s ease;
+}
+
+.text1 { left: -50px; }
+.text2 { right: -50px; }
+
+/* Trái tim giữa */
+.heart-between {
+    font-size: 24px;
+    color: #ff4f81;
+    opacity: 0;
+    position: relative;
+    display: inline-block;
+    transform: translateY(20px);
+    animation: heartUp 1.2s ease forwards, heartShake 1s ease-in-out infinite;
+}
+
+/* Animation bay lên trái tim */
+@keyframes heartUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    50% { transform: translateY(-10px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Animation rung nhẹ trái tim */
+@keyframes heartShake {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(0) translateX(-2px) rotate(-5deg); }
+    50% { transform: translateY(0) translateX(2px) rotate(5deg); }
+    75% { transform: translateY(0) translateX(-2px) rotate(-5deg); }
+}
+
+/* Thông tin mời dự tiệc */
+.info-text p {
+    font-size: clamp(14px, 3vw, 18px);
+    color: #444;
+    margin: 4px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+}
+
+/* Slide ảnh */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.slider img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slider img.active {
+    opacity: 1;
+}
+
+/* Couple: chú rể & cô dâu */
+.couple-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.person {
+    width: 48%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1.2s ease;
+}
+
+.person img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.person-info p {
+    margin: 4px 0;
+    font-size: clamp(14px, 3vw, 16px);
+    color: #555;
+}
+
+/* lịch */
+.countdown-calendar {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#countdown {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #ff4f81;
+}
+
+.calendar {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    background: #fef5f5;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.calendar .month {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+._name 
+{
+    font-family: "Dancing Script", cursive;
+}                       
+
+.weekdays, .days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.weekdays div, .days div {
+    width: calc(100% / 7);
+    text-align: center;
+    padding: 5px 0;
+    box-sizing: border-box;
+}
+
+.days div {
+    margin-bottom: 5px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.days div.wedding-day {
+    background: #ff4f81;
+    color: white;
+    font-weight: bold;
+}
+
+.days div.wedding-day:hover {
+    transform: scale(1.2);
+}
+.days div.wedding-day {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    margin: 2px auto;
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.days div.wedding-day span {
+    position: relative;
+    z-index: 2;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Trái tim bằng CSS */
+.days div.wedding-day::before,
+.days div.wedding-day::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #ff4f81;
+    border-radius: 50%;
+    top: 0;
+    left: 9px;
+}
+
+.days div.wedding-day::after {
+    left: 0;
+    top: 9px;
+    transform: rotate(-45deg);
+    transform-origin: center;
+}
+
+.days div.wedding-day::before {
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+
+/* Optional: rung nhẹ */
+.days div.wedding-day:hover {
+    animation: heartShake 0.6s ease-in-out infinite;
+}
+
+@keyframes heartShake {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    25% { transform: translateX(-2px) rotate(-5deg); }
+    50% { transform: translateX(2px) rotate(5deg); }
+    75% { transform: translateX(-2px) rotate(-5deg); }
+}
+/* map  */
+.wedding-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.wedding-buttons button {
+    padding: 10px 20px;
+    font-size: clamp(14px, 3vw, 18px);
+    border: none;
+    border-radius: 8px;
+    background-color: #ff4f81;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.wedding-buttons button:hover {
+    background-color: #e03d6d;
+}
+
+.wedding-info {
+    margin-top: 20px;
+    background-color: #fef5f5;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    display: none; /* Mặc định ẩn */
+}
+
+.wedding-map {
+    width: 100%;
+    max-width: 350px;
+    height: 200px;
+    margin: 10px auto 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+
+/* Trái tim rơi toàn màn */
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.heart {
+    position: absolute;
+    color: #ff4f81;
+    font-size: 16px;
+    opacity: 0.9;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {transform: translateY(-10%) rotate(0deg); opacity:1;}
+    100% {transform: translateY(120vh) rotate(360deg); opacity:0;}
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thiệp Cưới Tuấn Khanh & Cẩm Ly</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <div id="hearts-container"></div>
+
+    <!-- Ảnh top -->
+    <div class="top">
+        <img src="images/top.jpg" alt="">
+    </div>
+
+    <!-- Chữ dưới ảnh top -->
+    <div class="text">
+        <p class="text_top">Thư Mời Tiệc Cưới</p>
+
+        <!-- Dòng tên với trái tim giữa -->
+        <div class="text-line">
+            <p class="text1">Tuấn Khanh</p>
+            <!-- Trái tim bay lên -->
+            <span class="heart-between">❤️</span>
+            <p class="text2">Cẩm Ly</p>
+        </div>
+    </div>
+    <div class="couple-container">
+        <div class="person groom">
+            <img src="images/chure.JPG" alt="Chú rể">
+            <div class="person-info">
+                <p class="_name">Tuấn Khanh</p>
+                <p>-------❤️-------</p>
+                <p>Nhà Trai</p>
+                <p>Ông: Hoàng Văn Phi</p>
+                <p>Bà: Ngô Thị Kim Cúc</p>
+            </div>
+        </div>
+
+        <div class="person bride">
+            <img src="images/codau1.JPG" alt="Cô dâu">
+            <div class="person-info">
+                <p class="_name">Cẩm Ly</p>
+                <p>-------❤️-------</p>
+                <p>Nhà Gái</p>
+                <p>Ông: Vũ Xuân Bái</p>
+                <p>Bà: Lê Thị Mai</p>
+            </div>
+        </div>
+    </div>
+    <div class="wedding-buttons">
+        <button id="btnGroom">Tiệc cưới nhà trai</button>
+        <button id="btnBride">Tiệc cưới nhà gái</button>
+    </div>
+
+    <div id="weddingInfo" class="wedding-info">
+        <p id="weddingDateTime"></p>
+        <p id="weddingAddress"></p>
+        <div id="weddingMap" class="wedding-map">
+            <!-- Map sẽ hiển thị ở đây -->
+        </div>
+    </div>
+
+    <!-- Countdown & Calendar -->
+    <div class="countdown-calendar">
+        <div id="countdown">
+            <span id="days">0</span> ngày
+            <span id="hours">0</span> giờ
+            <span id="minutes">0</span> phút
+            <span id="seconds">0</span> giây
+        </div>
+
+        <!-- Lịch tháng 11/2025 -->
+        <div class="calendar">
+            <div class="month">Tháng 11 Năm 2025</div>
+            <div class="weekdays">
+                <div>CN</div><div>T2</div><div>T3</div><div>T4</div><div>T5</div><div>T6</div><div>T7</div>
+            </div>
+            <div class="days">
+                <!-- Các ngày sẽ hiển thị qua JS -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Slide ảnh -->
+    <div class="slider">
+        <img src="images/1.jpg" class="slide active">
+        <img src="images/2.jpg" class="slide">
+        <img src="images/3.jpg" class="slide">
+        <img src="images/4.jpg" class="slide">
+    </div>
+</div>
+
+
+
+
+
+    
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
