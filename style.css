@@ -320,6 +320,51 @@ html, body {
     border-radius: 10px;
     overflow: hidden;
 }
+
+/* timeline */
+.timeline 
+{
+    margin-top: 50px;
+}
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 60px;
+  flex-direction: row;
+}
+
+/* ảnh timeline */
+.timeline-icon img {
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateX(-50px); /* ban đầu trượt từ bên phải */
+  transition: all 0.8s ease-out;
+}
+
+/* giữ nghiêng khác nhau cho từng mốc */
+.timeline-item:nth-child(1) .timeline-icon img {
+  transform: translateX(-50px) rotate(-15deg);
+}
+
+.timeline-item:nth-child(2) .timeline-icon img {
+  transform: translateX(-50px) rotate(10deg);
+}
+
+.timeline-item:nth-child(3) .timeline-icon img {
+  transform: translateX(-50px) rotate(-10deg);
+}
+
+/* khi scroll vào */
+.timeline-item.show .timeline-icon img {
+  transform: translateX(0) rotate(var(--rotate, 0deg)); /* vẫn nghiêng */
+  opacity: 1;
+}
+
+
+
 /* qr */
 /* Nút QR */
 .qr-button-container 
