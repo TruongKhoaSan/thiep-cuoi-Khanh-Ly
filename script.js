@@ -145,7 +145,7 @@ const groomInfo = {
 };
 
 const brideInfo = {
-    datetime: "29/11/2025 - 07:00",
+    datetime: "30/11/2025 - 08:00",
     address: "Thôn Nguyên Khê - Xã Cẩm Giàng - Thành Phố Hải Phòng",
     mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1053.585232560865!2d106.1708874548225!3d20.95824441051516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313598bb60e1e1c7%3A0xd3807e5e85afa894!2zTmd1ecOqbiBLaMOqLCBD4bqpbSBHaWFuZywgQ-G6qW0gR2nDoG5nLCBI4bqjaSBExrDGoW5nLCBWaeG7h3QgTmFt!5e1!3m2!1svi!2s!4v1764112338255!5m2!1svi!2s"
 };
@@ -162,7 +162,29 @@ function showWedding(info) {
 btnGroom.addEventListener("click", () => showWedding(groomInfo));
 btnBride.addEventListener("click", () => showWedding(brideInfo));
 
-aaaaaaa
+// qr 
+const toggleQR = document.getElementById("toggleQR");
+const qrContent = document.getElementById("qrContent");
+const leftQR = document.querySelector(".qr-item.left");
+const rightQR = document.querySelector(".qr-item.right");
+
+toggleQR.addEventListener("click", () => {
+    // Thêm class show để mở
+    qrContent.classList.toggle("show");
+
+    if (qrContent.classList.contains("show")) {
+        // Delay để slide xuống trước rồi 2 ảnh di chuyển từ 2 bên
+        setTimeout(() => {
+            leftQR.classList.add("show");
+            rightQR.classList.add("show");
+        }, 200); // độ trễ 200ms
+    } else {
+        // Ẩn ảnh trước khi slide lên
+        leftQR.classList.remove("show");
+        rightQR.classList.remove("show");
+    }
+});
+
 
 
 
