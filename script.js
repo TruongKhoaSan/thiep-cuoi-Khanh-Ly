@@ -55,21 +55,28 @@ window.addEventListener("load", () => {
     }, 2000);
 
     // Couple fade in
-    const persons = document.querySelectorAll(".person");
-    setTimeout(() => {
-        persons.forEach((p, i) => {
-            setTimeout(() => {
-                p.style.opacity = "1";
-                p.style.transform = "translateY(0)";
-            }, i * 300);
-        });
-    }, 2800);
+    function revealOnScroll() {
+  const persons = document.querySelectorAll('.person');
+  const windowHeight = window.innerHeight;
+
+  persons.forEach(person => {
+    const top = person.getBoundingClientRect().top;
+
+    if (top < windowHeight - 100) { // khi phần tử vào viewport
+      person.classList.add('animate');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
 
     // Trái tim rơi toàn màn
     function createHeart() {
         const heart = document.createElement("div");
         heart.classList.add("heart");
-        heart.innerHTML = "❤️";
+        heart.innerHTML = "💗";
 
         heart.style.left = Math.random() * 100 + "vw";
         const size = Math.random() * 20 + 10;
@@ -83,29 +90,91 @@ window.addEventListener("load", () => {
 
     setInterval(createHeart, 300);
     // Đếm ngược đến ngày cưới
-const weddingDate = new Date("2025-11-29T18:00:00"); // thay bằng giờ lễ cưới
-function updateCountdown() {
-    const now = new Date();
-    const diff = weddingDate - now;
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    document.getElementById("days").textContent = days;
-    document.getElementById("hours").textContent = hours;
-    document.getElementById("minutes").textContent = minutes;
-    document.getElementById("seconds").textContent = seconds;
+// Animation khi cuộn
+const fadeElements = document.querySelectorAll(".fade-in");
+function checkFade() {
+    fadeElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            el.classList.add("show");
+        }
+    });
 }
-setInterval(updateCountdown, 1000);
-updateCountdown();
+window.addEventListener("scroll", checkFade);
+checkFade();
+
+/* Countdown hàm chung */
+// function countdown(targetDate, prefix) {
+//     setInterval(() => {
+//         const now = new Date().getTime();
+//         const distance = new Date(targetDate).getTime() - now;
+
+//         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+//         const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+//         const mins = Math.floor((distance / (1000 * 60)) % 60);
+//         const secs = Math.floor((distance / 1000) % 60);
+
+//         document.getElementById(prefix + "-days").innerText = days;
+//         document.getElementById(prefix + "-hours").innerText = hours;
+//         document.getElementById(prefix + "-mins").innerText = mins;
+//         document.getElementById(prefix + "-secs").innerText = secs;
+//     }, 1000);
+// }
+
+/* Gọi countdown cho từng div */
+// countdown("2025-11-29T10:00:00", "groom");  
+// countdown("2025-11-30T14:00:00", "bride");
+// Hàm countdown chung
+function startCountdown(targetDate, ids) {
+    const { daysId, hoursId, minsId, secsId } = ids;
+
+    const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = new Date(targetDate).getTime() - now;
+
+        if (distance < 0) {
+            clearInterval(interval);
+            document.getElementById(daysId).innerText = 0;
+            document.getElementById(hoursId).innerText = 0;
+            document.getElementById(minsId).innerText = 0;
+            document.getElementById(secsId).innerText = 0;
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+        const mins = Math.floor((distance / (1000 * 60)) % 60);
+        const secs = Math.floor((distance / 1000) % 60);
+
+        document.getElementById(daysId).innerText = days;
+        document.getElementById(hoursId).innerText = hours;
+        document.getElementById(minsId).innerText = mins;
+        document.getElementById(secsId).innerText = secs;
+    }, 1000);
+}
+
+// Gọi countdown cho từng div với thời gian khác nhau
+startCountdown("2025-11-29T16:30:00", {
+    daysId: "groom-days",
+    hoursId: "groom-hours",
+    minsId: "groom-mins",
+    secsId: "groom-secs"
+});
+
+startCountdown("2025-11-30T08:00:00", {
+    daysId: "bride-days",
+    hoursId: "bride-hours",
+    minsId: "bride-mins",
+    secsId: "bride-secs"
+});
+
+
 
 // Lịch tháng 11/2025
 const daysContainer = document.querySelector(".days");
 const year = 2025;
 const month = 10; // tháng 0-based: 0 = Jan, 10 = Nov
-const weddingDay = 29; // ngày cưới
+const weddingDay = 30; // ngày cưới
 
 const firstDay = new Date(year, month, 1).getDay(); // 0=CN, 1=T2,...
 const lastDate = new Date(year, month + 1, 0).getDate(); // ngày cuối tháng
@@ -151,16 +220,16 @@ const brideInfo = {
 };
 
 // Hàm hiển thị thông tin
-function showWedding(info) {
-    weddingDateTime.textContent = "Ngày & giờ: " + info.datetime;
-    weddingAddress.textContent = "Địa điểm: " + info.address;
-    weddingMap.innerHTML = `<iframe src="${info.mapSrc}" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`;
-    weddingInfo.style.display = "block";
-}
+// function showWedding(info) {
+//     weddingDateTime.textContent = "Ngày & giờ: " + info.datetime;
+//     weddingAddress.textContent = "Địa điểm: " + info.address;
+//     weddingMap.innerHTML = `<iframe src="${info.mapSrc}" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`;
+//     weddingInfo.style.display = "block";
+// }
 
-// Event listener
-btnGroom.addEventListener("click", () => showWedding(groomInfo));
-btnBride.addEventListener("click", () => showWedding(brideInfo));
+// // Event listener
+// btnGroom.addEventListener("click", () => showWedding(groomInfo));
+// btnBride.addEventListener("click", () => showWedding(brideInfo));
 
 // qr 
 const toggleQR = document.getElementById("toggleQR");
@@ -210,6 +279,32 @@ function revealTimeline() {
 
 window.addEventListener('scroll', revealTimeline);
 window.addEventListener('load', revealTimeline);
+
+
+document.querySelectorAll(".wedding-box").forEach((box) => {
+    const btn = box.querySelector(".toggleMapBtn");
+    const mapDiv = box.querySelector(".map");
+    const mapUrl = mapDiv.dataset.map;
+
+    let isOpen = false;
+
+    btn.addEventListener("click", () => {
+        if (!isOpen) {
+            mapDiv.innerHTML = `<iframe src="${mapUrl}" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>`;
+            mapDiv.style.height = "250px";
+            btn.textContent = "Ẩn chỉ đường";
+            isOpen = true;
+        } else {
+            mapDiv.style.height = "0";
+            btn.textContent = "Xem chỉ đường";
+            isOpen = false;
+
+            setTimeout(() => {
+                mapDiv.innerHTML = "";
+            }, 400);
+        }
+    });
+});
 
 
 
