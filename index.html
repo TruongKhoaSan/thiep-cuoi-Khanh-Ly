@@ -1,168 +1,213 @@
 <!DOCTYPE html>
+
 <html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thiệp Cưới Tuấn Khanh & Cẩm Ly</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thiệp Cưới Tuấn Khanh & Cẩm Ly</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
-    <div id="hearts-container"></div>
+      <div id="hearts-container"></div>
 
-    <!-- Ảnh top -->
-    <div class="top">
-        <img src="images/top.jpg" alt="">
-    </div>
+      <!-- Ảnh top -->
+      <div class="top fade-in-on-scroll">
+        <img src="images/top.jpg" alt="" />
+      </div>
+      <div class="text_honnhan">
+        <span class="span_">
+          "“Hôn nhân là chuyện cả đời,
+          <br />
+          Yêu người vừa ý, cưới người mình thương""
+        </span>
+      </div>
 
-    <!-- Chữ dưới ảnh top -->
-    <div class="text">
-        <p class="text_top">Thư Mời Tiệc Cưới</p>
+      <!-- Chữ dưới ảnh top -->
 
-        <!-- Dòng tên với trái tim giữa -->
-        <div class="text-line">
-            <p class="text1">Tuấn Khanh</p>
-            <!-- Trái tim bay lên -->
-            <span class="heart-between">❤️</span>
-            <p class="text2">Cẩm Ly</p>
-        </div>
-    </div>
-    <div class="couple-container">
+      <!-- Couple -->
+      <div class="couple-section">
+        <!-- Chú rể -->
         <div class="person groom">
-            <img src="images/chure.JPG" alt="Chú rể">
-            <div class="person-info">
-                <p class="_name">Tuấn Khanh</p>
-                <p>-------❤️-------</p>
-                <p>Nhà Trai</p>
-                <p>Ông: Hoàng Văn Phi</p>
-                <p>Bà: Ngô Thị Kim Cúc</p>
-            </div>
+          <img src="images/chure.jpg" alt="Chú rể" />
+          <div class="person-info">
+            <p class="title_">NHÀ TRAI</p>
+            <p class="_name">Chú Rể: Tuấn Khanh</p>
+            <p>Ông: Hoàng Văn Phi</p>
+            <p>Bà: Ngô Thị Kim Cúc</p>
+          </div>
         </div>
 
+        <!-- Cô dâu -->
         <div class="person bride">
-            <img src="images/codau1.JPG" alt="Cô dâu">
-            <div class="person-info">
-                <p class="_name">Cẩm Ly</p>
-                <p>-------❤️-------</p>
-                <p>Nhà Gái</p>
-                <p>Ông: Vũ Xuân Bái</p>
-                <p>Bà: Lê Thị Mai</p>
-            </div>
+          <img src="images/codau1.jpg" alt="Cô dâu" />
+          <div class="person-info">
+            <p class="title_">NHÀ GÁI</p>
+            <p class="_name">Cô Dâu: Cẩm Ly</p>
+            <p>Ông: Vũ Xuân Bái</p>
+            <p>Bà: Lê Thị Mai</p>
+          </div>
         </div>
-    </div>
-    <div class="wedding-buttons">
-        <button id="btnGroom">Tiệc cưới nhà trai</button>
-        <button id="btnBride">Tiệc cưới nhà gái</button>
-    </div>
+      </div>
 
-    <div id="weddingInfo" class="wedding-info">
-        <p id="weddingDateTime"></p>
-        <p id="weddingAddress"></p>
-        <div id="weddingMap" class="wedding-map">
-            <!-- Map sẽ hiển thị ở đây -->
+      <div class="text fade-in-on-scroll">
+        <p class="text_top fade-in-on-scroll">Thư Mời Tham Dự Lễ Cưới Của</p>
+        <div class="text-line fade-in-on-scroll">
+          <p class="text1">Tuấn Khanh</p>
+          <span class="heart-between">❤️</span>
+          <p class="text2">Cẩm Ly</p>
         </div>
-    </div>
+      </div>
 
-    <!-- Countdown & Calendar -->
-    <div class="countdown-calendar">
-        <div id="countdown">
-            <span id="days">0</span> ngày
-            <span id="hours">0</span> giờ
-            <span id="minutes">0</span> phút
-            <span id="seconds">0</span> giây
+      <div class="three_images">
+        <div class="img_small">
+          <img src="images/31.jpg" alt="" />
         </div>
 
-        <!-- Lịch tháng 11/2025 -->
+        <div class="img_big">
+          <img src="images/33.jpg" alt="" />
+        </div>
+
+        <div class="img_small">
+          <img src="images/32.jpg" alt="" />
+        </div>
+      </div>
+
+      <!-- Wedding buttons -->
+      <div class="wedding-box">
+        <h3>Tiệc Cưới Nhà Trai</h3>
+        <p class="time_">THỨ 7 - 16:30</p>
+        <p class="date">29 . 11 . 2025</p>
+        <p class="date">( Tức ngày 10 tháng 10 năm Ất Tỵ )</p>
+        <p class="address_">Tại Tư Gia Nhà Trai</p>
+        <p class="address">268 đường Cổ Loa, Đông Anh, Hà Nội</p>
+        <div class="countdown" id="countdown-groom">
+        <span id="groom-days">0</span> ngày 
+        <span id="groom-hours">0</span> giờ 
+        <span id="groom-mins">0</span> phút 
+        <span id="groom-secs">0</span> giây
+    </div>
+        <button class="toggleMapBtn">Xem chỉ đường</button>
+        <div
+          class="map"
+          data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6372.5802931493945!2d105.87074201249231!3d21.121301784509228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313500ca81be3483%3A0x38a3128dbbc0de07!2zMjY4IEPhu5UgTG9hLCDEkMO0bmcgQW5oLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e1!3m2!1svi!2s!4v1764191523365!5m2!1svi!2s"
+        ></div>
+      </div>
+
+      <div class="wedding-box">
+        <h3>Tiệc Cưới Nhà Gái</h3>
+        <p class="time_">CHỦ NHẬT - 08:00</p>
+        <p class="date">30 . 11 . 2025</p>
+        <p class="date">( Tức ngày 11 tháng 10 năm Ất Tỵ )</p>
+        <p class="address_">Tại Tư Gia Nhà Gái</p>
+        <p class="address">Thôn Nguyên Khê, Xã Cẩm Giàng, Hải Phòng</p>
+        <div class="countdown" id="countdown-bride">
+        <span id="bride-days">0</span> ngày 
+        <span id="bride-hours">0</span> giờ 
+        <span id="bride-mins">0</span> phút 
+        <span id="bride-secs">0</span> giây
+    </div>
+        <button class="toggleMapBtn">Xem chỉ đường</button>
+        <div
+          class="map"
+          data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d884.7556645451598!2d106.17115739799353!3d20.95785161716171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313598bb60e1e1c7%3A0xd3807e5e85afa894!2zTmd1ecOqbiBLaMOqLCBD4bqpbSBHaWFuZywgQ-G6qW0gR2nDoG5nLCBI4bqjaSBExrDGoW5nLCBWaeG7h3QgTmFt!5e1!3m2!1svi!2s!4v1764188942892!5m2!1svi!2s"
+        ></div>
+      </div>
+
+      <!-- -- lịch  -->
+      <div class="countdown-calendar fade-in-on-scroll">
+        <!-- <div id="countdown">
+          <span id="days">0</span> ngày <span id="hours">0</span> giờ
+          <span id="minutes">0</span> phút <span id="seconds">0</span> giây
+        </div> -->
         <div class="calendar">
-            <div class="month">Tháng 11 Năm 2025</div>
-            <div class="weekdays">
-                <div>CN</div><div>T2</div><div>T3</div><div>T4</div><div>T5</div><div>T6</div><div>T7</div>
-            </div>
-            <div class="days">
-                <!-- Các ngày sẽ hiển thị qua JS -->
-            </div>
+          <div class="month">Tháng 11 Năm 2025</div>
+          <div class="weekdays">
+            <div>CN</div>
+            <div>T2</div>
+            <div>T3</div>
+            <div>T4</div>
+            <div>T5</div>
+            <div>T6</div>
+            <div>T7</div>
+          </div>
+          <div class="days"></div>
         </div>
-    </div>
+      </div>
 
-    <!-- timeline -->
-     <div class="timeline">
-
-  <div class="timeline-item">
-    <div class="timeline-icon">
-      <img src="images/landau1.jpg" alt="Gặp nhau">
-    </div>
-    <div class="timeline-content">
-      <!-- <span class="timeline-date">01/01/2020</span> -->
-      <h3>Lần đầu gặp nhau</h3>
-      <p>Khanh: Tóc vàng khè, giọng khàn khàn</p>
-      <p>Lee: Khum quan tâm cho lắm</p>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-icon">
-      <img src="images/yeu.jpg" alt="Yêu nhau">
-    </div>
-    <div class="timeline-content">
-      <!-- <span class="timeline-date">02/11/2024</span> -->
-      <h3>Bắt đầu yêu nhau</h3>
-      <p>Chính thức bên nhau, cùng nhau trải qua những kỷ niệm đẹp, vui có, buồn có.</p>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-icon">
-      <img src="images/cuoi.jpg" alt="Cưới">
-    </div>
-    <div class="timeline-content">
-      <!-- <span class="timeline-date">29/11/2025</span> -->
-      <h3>Ngày cưới</h3>
-      <p>Ngày trọng đại, cùng gia đình, bạn bè chúc phúc cho tình yêu của chúng mình.</p>
-    </div>
-  </div>
-
-</div>
-
-
-
-     <!-- Nút QR -->
-    <div class="qr-button-container">
-        <button id="toggleQR" class="qr-btn">💗 Xem mã QR mừng cưới</button>
-    </div>
-
-    <!-- Nội dung QR ẩn ban đầu -->
-    <div id="qrContent" class="qr-content">
-        <div class="qr-flex">
-            <div class="qr-item left">
-                <p>💙 Chú Rể</p>
-                <img src="images/qr_Khanh.jpg" alt="QR chú rể">
-            </div>
-            <div class="qr-item right">
-                <p>💖 Cô Dâu</p>
-                <img src="images/qr_Ly.jpg" alt="QR cô dâu">
-            </div>
+      <!-- Timeline -->
+      <div class="timeline fade-in-on-scroll">
+        <div class="timeline-item fade-in-on-scroll">
+          <div class="timeline-icon">
+            <img src="images/landau1.jpg" alt="Gặp nhau" />
+          </div>
+          <div class="timeline-content">
+            <h3>LẦN ĐẦU GẶP NHAU</h3>
+            <p>Tóc vàng, giọng khàn</p>
+          </div>
         </div>
+        <p class="line_timeline"></p>
+        <div class="timeline-item fade-in-on-scroll">
+          <div class="timeline-icon">
+            <img src="images/yeu.jpg" alt="Yêu nhau" />
+          </div>
+          <div class="timeline-content">
+            <h3>BẮT ĐẦU YÊU NHAU</h3>
+            <p>Dính không dứt được</p>
+          </div>
+        </div>
+        <div class="timeline-item fade-in-on-scroll">
+          <div class="timeline-icon">
+            <img src="images/cuoi.jpg" alt="Cưới" />
+          </div>
+          <div class="timeline-content">
+            <h3>CƯỚI NHAU NÈ</h3>
+            <p>Về với nhau thôi nào</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- QR -->
+      <div class="qr-button-container fade-in-on-scroll">
+        <button id="toggleQR" class="qr-btn">
+          💙 Mọi yêu thương gửi từ phương xa 💙
+        </button>
+      </div>
+      <div id="qrContent" class="qr-content">
+        <div class="qr-item left">
+          <p>💙 Chú Rể</p>
+          <img src="images/qr_Khanh.jpg" alt="QR chú rể" />
+        </div>
+        <div class="qr-item right">
+          <p>💖 Cô Dâu</p>
+          <img src="images/qr_Ly.jpg" alt="QR cô dâu" />
+        </div>
+      </div>
+
+      <!-- Slider -->
+      <div class="slider fade-in-on-scroll">
+        <img src="images/1.jpg" class="slide active" />
+        <img src="images/2.jpg" class="slide" />
+        <img src="images/3.jpg" class="slide" />
+        <img src="images/4.jpg" class="slide" />
+      </div>
+
+      <!-- Thank you -->
+      <div class="thank-container fade-in-on-scroll">
+        <h1>Thank You ❤️</h1>
+        <p>
+          Cảm ơn tất cả mọi người đã đến chung vui trong ngày trọng đại của
+          chúng tôi!
+        </p>
+      </div>
     </div>
 
-
-
-    <!-- Slide ảnh -->
-    <div class="slider">
-        <img src="images/1.jpg" class="slide active">
-        <img src="images/2.jpg" class="slide">
-        <img src="images/3.jpg" class="slide">
-        <img src="images/4.jpg" class="slide">
-    </div>
-</div>
-
-
-
-
-
-    
-
-
-
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
