@@ -131,30 +131,27 @@ const swiper = new Swiper(".mySwiper", {
   centeredSlides: true,
   slidesPerView: 3,
   loop: true,
-  spaceBetween: 20,
+  spaceBetween: 25,
   initialSlide: 0,
   coverflowEffect: {
     rotate: 0,
     stretch: 0,
-    depth: 100,
+    depth: 150,
     modifier: 1,
     slideShadows: false,
   },
   breakpoints: {
-    // Khi màn hình <= 480px (điện thoại nhỏ)
     480: {
       slidesPerView: 1.5,
       spaceBetween: 10,
     },
-    // Khi màn hình <= 768px (tablet)
     768: {
       slidesPerView: 2.3,
       spaceBetween: 15,
     },
-    // Màn hình lớn (desktop)
     1024: {
       slidesPerView: 3,
-      spaceBetween: 20,
+      spaceBetween: 25,
     }
   }
 });
