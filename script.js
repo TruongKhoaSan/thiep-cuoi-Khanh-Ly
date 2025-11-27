@@ -126,35 +126,34 @@ checkFade();
 // countdown("2025-11-30T14:00:00", "bride");
 //  slide 3 ảnh 
 const swiper = new Swiper(".mySwiper", {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
   slidesPerView: 3,
+  centeredSlides: true,
+  spaceBetween: 20,
   loop: true,
-  spaceBetween: 25,
-  initialSlide: 0,
+  speed: 4000,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false
+  },
+  freeMode: true,
+  freeModeMomentum: true,
+  freeModeMomentumVelocityRatio: 1,
+  allowTouchMove: false,
   coverflowEffect: {
     rotate: 0,
     stretch: 0,
-    depth: 150,
+    depth: 100,
     modifier: 1,
-    slideShadows: false,
+    slideShadows: false
   },
   breakpoints: {
-    480: {
-      slidesPerView: 1.5,
-      spaceBetween: 10,
-    },
-    768: {
-      slidesPerView: 2.3,
-      spaceBetween: 15,
-    },
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 25,
-    }
+    480: { slidesPerView: 1.5, spaceBetween: 10 },
+    768: { slidesPerView: 2.3, spaceBetween: 15 },
+    1024: { slidesPerView: 3, spaceBetween: 20 }
   }
 });
+
+
 
 
 // Hàm countdown chung
@@ -339,6 +338,48 @@ document.querySelectorAll(".wedding-box").forEach((box) => {
     });
 });
 
+// video 
+const title = document.querySelector('.video-title h2');
 
+// --- Video & sound button ---
+const video = document.getElementById('myVideo');
+const soundBtn = document.getElementById('soundBtn');
+
+// Observer text & video
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('active'); // hiệu ứng text
+      video.play(); // play video khi text xuất hiện
+      soundBtn.style.display = 'block'; // hiện nút âm thanh
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.9 });
+
+observer.observe(title);
+
+
+// Click nút bật/tắt âm thanh
+soundBtn.addEventListener('click', () => {
+  video.muted = !video.muted; // chuyển trạng thái mute
+  soundBtn.textContent = video.muted ? '🔇' : '🔊'; // thay icon
+});
+
+
+
+
+const thankText = document.querySelector('.thank-text');
+
+  const observere = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observere.observe(thankText);
 
 });
