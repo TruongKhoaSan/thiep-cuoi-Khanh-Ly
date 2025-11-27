@@ -269,11 +269,10 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
 
 
 /* ==== SLIDER 3 ẢNH ==== */
-
 .swiper {
   width: 90%;
-  max-width: 700px;
-  height: 300px;
+  max-width: 800px; /* tăng max-width */
+  height: 400px;    /* tăng chiều cao */
   margin: 0 auto;
 }
 
@@ -287,41 +286,57 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
 
 /* Ảnh trong slide */
 .swiper-slide img {
-  width: 160px;
-  max-width: 40vw;
+  width: 220px;      /* tăng width cơ bản */
+  max-width: 45vw;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   transition: transform 0.3s;
-  transform: scale(0.7);
+  transform: scale(0.75); /* tăng scale cơ bản */
 }
 
 /* Ảnh bên cạnh */
 .swiper-slide-prev img,
 .swiper-slide-next img {
-  transform: scale(0.85);
+  transform: scale(0.9); /* ảnh cạnh lớn hơn trước */
 }
 
 /* Ảnh giữa */
 .swiper-slide-active img {
-  transform: scale(1);
+  transform: scale(1.15); /* ảnh giữa to hơn */
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .swiper {
-    height: 250px;
+    height: 300px;
   }
   .swiper-slide img {
-    width: 120px;
+    width: 160px;
+    transform: scale(0.75);
+  }
+  .swiper-slide-prev img,
+  .swiper-slide-next img {
+    transform: scale(0.85);
+  }
+  .swiper-slide-active img {
+    transform: scale(1);
   }
 }
 
 @media (max-width: 480px) {
   .swiper {
-    height: 200px;
+    height: 220px;
   }
   .swiper-slide img {
-    width: 100px;
+    width: 120px;
+    transform: scale(0.7);
+  }
+  .swiper-slide-prev img,
+  .swiper-slide-next img {
+    transform: scale(0.8);
+  }
+  .swiper-slide-active img {
+    transform: scale(1);
   }
 }
 
