@@ -124,6 +124,42 @@ checkFade();
 /* Gọi countdown cho từng div */
 // countdown("2025-11-29T10:00:00", "groom");  
 // countdown("2025-11-30T14:00:00", "bride");
+//  slide 3 ảnh 
+const swiper = new Swiper(".mySwiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 3,
+  loop: true,
+  spaceBetween: 20,
+  initialSlide: 0,
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: false,
+  },
+  breakpoints: {
+    // Khi màn hình <= 480px (điện thoại nhỏ)
+    480: {
+      slidesPerView: 1.5,
+      spaceBetween: 10,
+    },
+    // Khi màn hình <= 768px (tablet)
+    768: {
+      slidesPerView: 2.3,
+      spaceBetween: 15,
+    },
+    // Màn hình lớn (desktop)
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    }
+  }
+});
+
+
 // Hàm countdown chung
 function startCountdown(targetDate, ids) {
     const { daysId, hoursId, minsId, secsId } = ids;
