@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <div class="container">
@@ -35,7 +39,7 @@
       <div class="couple-section">
         <!-- Chú rể -->
         <div class="person groom">
-          <img src="images/chure.JPG" alt="Chú rể" />
+          <img src="images/chure.jpg" alt="Chú rể" />
           <div class="person-info">
             <p class="title_">NHÀ TRAI</p>
             <p class="_name">Chú Rể: Tuấn Khanh</p>
@@ -46,7 +50,7 @@
 
         <!-- Cô dâu -->
         <div class="person bride">
-          <img src="images/codau1.JPG" alt="Cô dâu" />
+          <img src="images/codau1.jpg" alt="Cô dâu" />
           <div class="person-info">
             <p class="title_">NHÀ GÁI</p>
             <p class="_name">Cô Dâu: Cẩm Ly</p>
@@ -65,17 +69,23 @@
         </div>
       </div>
 
-      <div class="three_images">
-        <div class="img_small">
-          <img src="images/31.jpg" alt="" />
-        </div>
-
-        <div class="img_big">
-          <img src="images/33.jpg" alt="" />
-        </div>
-
-        <div class="img_small">
-          <img src="images/32.jpg" alt="" />
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/31.jpg" alt="Ảnh 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/33.jpg" alt="Ảnh 2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/32.jpg" alt="Ảnh 3" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/34.jpg" alt="Ảnh 3" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/35.jpg" alt="Ảnh 3" />
+          </div>
         </div>
       </div>
 
@@ -88,11 +98,11 @@
         <p class="address_">Tại Tư Gia Nhà Trai</p>
         <p class="address">268 đường Cổ Loa, Đông Anh, Hà Nội</p>
         <div class="countdown" id="countdown-groom">
-        <span id="groom-days">0</span> ngày 
-        <span id="groom-hours">0</span> giờ 
-        <span id="groom-mins">0</span> phút 
-        <span id="groom-secs">0</span> giây
-    </div>
+          <span id="groom-days">0</span> ngày
+          <span id="groom-hours">0</span> giờ
+          <span id="groom-mins">0</span> phút
+          <span id="groom-secs">0</span> giây
+        </div>
         <button class="toggleMapBtn">Xem chỉ đường</button>
         <div
           class="map"
@@ -108,11 +118,11 @@
         <p class="address_">Tại Tư Gia Nhà Gái</p>
         <p class="address">Thôn Nguyên Khê, Xã Cẩm Giàng, Hải Phòng</p>
         <div class="countdown" id="countdown-bride">
-        <span id="bride-days">0</span> ngày 
-        <span id="bride-hours">0</span> giờ 
-        <span id="bride-mins">0</span> phút 
-        <span id="bride-secs">0</span> giây
-    </div>
+          <span id="bride-days">0</span> ngày
+          <span id="bride-hours">0</span> giờ
+          <span id="bride-mins">0</span> phút
+          <span id="bride-secs">0</span> giây
+        </div>
         <button class="toggleMapBtn">Xem chỉ đường</button>
         <div
           class="map"
@@ -209,6 +219,8 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   </body>
 </html>
+
 
