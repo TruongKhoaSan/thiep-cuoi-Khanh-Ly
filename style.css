@@ -647,8 +647,9 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
 
 .timeline-content h3 {
   margin: 6px 0;
-  font-size: 14px;
-  color: #ff6f91;
+  font-size: 20px;
+  color: #e22a55;
+  font-weight: 500;
   font-family: "Pacifico", cursive;
 }
 
