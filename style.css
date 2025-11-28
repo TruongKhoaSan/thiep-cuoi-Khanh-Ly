@@ -45,7 +45,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
     opacity: 1;
     position: absolute;
     left: 0px;
-    color: rgb(144 99 140);
+    color: #ff4f81;
     font-size: 20px;
     font-family: "Pacifico", cursive;
     text-align: center;
@@ -84,7 +84,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
     transform: translateX(-50%) scaleX(0);
     width: 120px;          /* độ dài line */
     height: 7px;           /* độ dày line */
-    background: rgb(144 99 140); /* màu line giống màu chữ */
+    background: #ff4f81; /* màu line giống màu chữ */
     border-radius: 2px;
 
     animation: lineGrow 1.5s ease forwards;
@@ -116,7 +116,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
     font-size: 25px;
     font-family: "Pacifico", cursive;
     font-weight: bold;
-    color: rgb(144 99 140);
+    color: #ff4f81;
     opacity: 0;
     transform: translateY(-20px);
     transition: all 1.2s ease;
@@ -138,7 +138,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
     font-size: 25px;
     font-family: "Pacifico", cursive;
     font-weight: bold;
-    color: rgb(144 99 140);
+    color: #ff4f81;
     opacity: 0;
     position: relative;
     transition: all 1s ease;
@@ -249,12 +249,13 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
   /* background: rgba(0,0,0,0.3); */
   padding: 20px;
   border-radius: 10px;
-  color: rgb(144 99 140);
+  color: #ff4f81;
   font-size: 15px;
-  font-family: "Dancing Script", cursive;
+  font-family: "Pacifico", cursive;
 } .title_ 
 {
     font-weight: bold;
+    font-family: "Cherry Bomb One", system-ui;
     font-size: 20px;
 }
 
@@ -274,6 +275,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
   max-width: 700px;
   height: 350px;
   margin: 0 auto;
+  overflow: visible;
 }
 
 .swiper-slide {
@@ -283,30 +285,35 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
 }
 
 .swiper-slide img {
-  width: 160px;
+  width: 200px; /* ảnh lớn hơn */
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
+  transition: transform 0.4s ease, opacity 0.4s ease;
   transform: scale(0.7);
+  opacity: 0.5;
 }
 
+/* Ảnh ở giữa phóng to */
+.swiper-slide-active img {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+/* Ảnh bên cạnh (prev & next) */
 .swiper-slide-prev img,
 .swiper-slide-next img {
-  transform: scale(0.85);
+  transform: scale(0.9);
+  opacity: 0.8;
 }
 
-.swiper-slide-active img {
-  transform: scale(1);
-}
-
+/* Mobile */
 @media (max-width: 768px) {
   .swiper { height: 250px; }
-  .swiper-slide img { width: 120px; }
+  .swiper-slide img { width: 150px; }
 }
 
 @media (max-width: 480px) {
-  .swiper { height: 200px; }
-  .swiper-slide img { width: 100px; }
+  .swiper { height: 220px; }
+  .swiper-slide img { width: 130px; }
 }
 
 
@@ -329,7 +336,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
     width: 100%;
     max-width: 350px;
     margin: 0 auto;
-    background: linear-gradient(135deg, rgb(73, 178, 207), rgb(144 99 140));;
+    background: linear-gradient(135deg, #ff6f91, #ff6f91);
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -341,9 +348,67 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
     margin-bottom: 20px;
     font-size: 25px;
 }
+.calendar .days div.heart-day {
+    position: relative;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.calendar .days div.heart-day::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 18px;
+    height: 18px;
+    background-image: url('images/heart.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.special-day {
+    position: relative;
+    color: #ff4f81;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* Viền trái tim bao quanh */
+.special-day::before {
+    content: "❤️";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(2.3);
+    opacity: 0.35;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* hiệu ứng xuất hiện */
+.special-day {
+    animation: popDay 0.6s ease-out;
+}
+
+@keyframes popDay {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
 ._name 
 {
-    font-family: "Dancing Script", cursive;
+    font-family: "Pacifico", cursive;
+    font-size: 19px;
 }                       
 
 .weekdays, .days {
@@ -365,7 +430,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
 }
 
 .days div.wedding-day {
-    background: linear-gradient(135deg, #e5edef, #47c1e9);
+    background: linear-gradient(135deg, #e5b7a2, #d82323);
     color: white;
     font-weight: bold;
 }
@@ -399,7 +464,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
     position: absolute;
     width: 18px;
     height: 18px;
-    background: linear-gradient(135deg, #7bd2e7, #227f9e);
+    background: linear-gradient(135deg, #faadad, #7e4141);
     border-radius: 50%;
     top: 0;
     left: 9px;
@@ -435,7 +500,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
 /* Nền và bo góc cho div */
 .wedding-box {
     background: linear-gradient(135deg, #ffffff, #ffffff); /* Gradient hồng nhẹ */
-    border: 1px dashed rgb(35 138 187);
+    border: 1px dashed rgb(253, 113, 113);
     border-radius: 15px;
     padding: 25px 20px;
     margin: 40px 0;
@@ -447,7 +512,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
 
 /* Tiêu đề h3 */
 .wedding-box h3 {
-    color: #177a9b; /* Màu hồng đậm nổi bật */
+    color: #ff4f81; /* Màu hồng đậm nổi bật */
     font-size: 25px;
     margin-bottom: 12px;
     font-weight: 600;
@@ -466,7 +531,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
     font-size: 16px;
     font-weight: 600;
     margin: 10px 0 15px 0;
-    color: #30a4c9;
+    color: #ff4f81;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
 }
@@ -486,7 +551,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
 .toggleMapBtn {
     margin-top: 20px;
     padding: 12px 24px;
-    background: linear-gradient(135deg, rgb(73, 178, 207), rgb(144 99 140)); /* Gradient hồng */
+    background: linear-gradient(135deg, #ff6f91, #ff6f91); /* Gradient hồng */
     color: #fff;
     border: none;
     border-radius: 50px; /* Bo tròn mềm mại */
@@ -499,7 +564,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
 }
 
 .toggleMapBtn:hover {
-    background: linear-gradient(135deg, rgb(144 99 140), rgb(73, 178, 207)); /* Gradient đậm hơn */
+    background: linear-gradient(135deg, #ff6f91, #ff6f91); /* Gradient đậm hơn */
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(116, 180, 218, 0.4);
 }
@@ -520,64 +585,212 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-
+.map.active {
+    height: 200px; /* chiều cao khi bật map */
+}
 
 
 /* timeline */
-.timeline 
-{
-    margin-top: 50px;
-}
+/* Timeline tổng */
 .timeline-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 60px;
-  margin-left: 30px;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.timeline-content p
-{
-    color: #177a9b;
-}
-.timeline-content h3 
-{
-    font-weight: bold;
-    color: #185d74;
-    font-family: "Dancing Script", cursive;
-
-}
-
-/* ảnh timeline */
-.timeline-icon img {
-  width: 130px;
-  height: 130px;
-  border-radius: 10px;
-  object-fit: cover;
+  justify-content: flex-start;
+  margin: 40px 0;
   opacity: 0;
-  transform: translateX(-50px); /* ban đầu trượt từ bên phải */
-  transition: all 0.8s ease-out;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
 
-/* giữ nghiêng khác nhau cho từng mốc */
-.timeline-item:nth-child(1) .timeline-icon img {
-  transform: translateX(-50px) rotate(-15deg);
-}
-
-.timeline-item:nth-child(2) .timeline-icon img {
-  transform: translateX(-50px) rotate(10deg);
-}
-
-.timeline-item:nth-child(3) .timeline-icon img {
-  transform: translateX(-50px) rotate(-10deg);
-}
-
-/* khi scroll vào */
-.timeline-item.show .timeline-icon img {
-  transform: translateX(0) rotate(var(--rotate, 0deg)); /* vẫn nghiêng */
+.timeline-item.show {
   opacity: 1;
+  transform: translateY(0);
 }
 
+/* Nếu là left, ảnh bên trái, chữ bên phải */
+.timeline-item.left {
+  flex-direction: row;
+}
+
+/* Nếu là right, chữ bên trái, ảnh bên phải */
+.timeline-item.right {
+  flex-direction: row-reverse;
+}
+
+/* Khung ảnh */
+.timeline-image {
+  background: #fffdfa;
+  padding: 12px;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  /* border: 1px solid #f2e6d8; */
+  width: 140px;
+  margin-right: 20px;
+}
+
+.timeline-item.right .timeline-image {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+.timeline-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Nội dung */
+.timeline-content {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.timeline-content h3 {
+  margin: 6px 0;
+  font-size: 17px;
+  color: #ff6f91;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Chữ đẹp hơn */
+.story {
+  font-size: 16px;
+  color: #ff4d6d;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  line-height: 1.6;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+  position: relative;
+  margin-top: 50px;
+}
+.story p 
+{
+    margin: 0;
+}
+
+/* Tim nhỏ bay */
+.heart {
+  position: absolute;
+  font-size: 10px;
+  color: #ff6f91;
+  animation: floatHeart 2s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes floatHeart {
+  0% { transform: translate(0,0) scale(1); opacity: 1; }
+  50% { transform: translate(10px,-20px) scale(1.2); opacity: 0.8; }
+  100% { transform: translate(-10px,-40px) scale(0.8); opacity: 0; }
+}
+
+
+
+
+/* lời chúc  */
+.wish-section {
+    margin-top: 60px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.wish-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.wish-title {
+    font-size: 26px;
+    font-weight: bold;
+    font-family: "Pacifico", cursive;
+    color: #ff4f81;
+    margin-bottom: 20px;
+    animation: fadeSlide 1.2s ease forwards;
+}
+
+@keyframes fadeSlide {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.wish-form {
+    width: 90%;
+    max-width: 450px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(255, 79, 129, 0.25);
+    animation: popIn 0.8s ease forwards;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.wish-form input,
+.wish-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border: 2px solid #ffd2df;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.wish-form input:focus,
+.wish-form textarea:focus {
+    border-color: #ff4f81;
+    box-shadow: 0 0 8px rgba(255, 79, 129, 0.3);
+}
+
+.wish-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #ff6f91, #ff4f81);
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.wish-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff4f81, #ff2d63);
+}
+
+/* Hiện danh sách lời chúc */
+.wish-list {
+    margin-top: 25px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wish-item {
+    background: #fff0f6;
+    padding: 12px 18px;
+    color: #ef8989;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255,79,129,0.2);
+    animation: slideWish 0.7s ease forwards;
+}
+
+@keyframes slideWish {
+    0% { transform: translateX(-40px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.wish-item strong {
+    color: #ff4f81;
+}
 
 
 /* qr */
@@ -588,10 +801,11 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
 }
 .qr-btn {
     padding: 10px 20px;
-    background: linear-gradient(135deg, rgb(73, 178, 207), rgb(144 99 140));;
+    background: linear-gradient(135deg, #ff6f91, #ff6f91);
     border: none;
     color: white;
     font-size: 18px;
+    font-family: "Pacifico", cursive;
     border-radius: 30px;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(51, 177, 216, 0.5);
@@ -600,7 +814,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
 
 .qr-btn:hover {
     transform: scale(1.08);
-    background: linear-gradient(135deg, rgb(73, 178, 207), rgb(144 99 140));;
+    background: linear-gradient(135deg, #ff6f91, #ff6f91);
 }
 
 /* Nội dung QR ẩn ban đầu */
@@ -627,9 +841,16 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
 
 .qr-item {
     text-align: center;
-    opacity: 0;
+    /* opacity: 0; */
     transform: translateX(0);
     transition: all 1s ease;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0;
+}
+.qr-item p 
+{
+    color: #ef8989;
 }
 
 .qr-item img {
@@ -835,7 +1056,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
   display: inline-block;
   position: relative;
   font-size: 20px;
-  color: rgb(144 99 140);
+  color: #ff4f81;
   font-family: "Pacifico", cursive;
   opacity: 0;
   transform: translateY(50px);
@@ -848,7 +1069,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
   display: block;
   width: 0%;
   height: 2px;
-  background: rgb(144 99 140);
+  background: #ff4f81;
   margin: 10px auto 0;
   transition: width 1s ease-in-out;
 }
@@ -890,5 +1111,3 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
   .video-title h2 { font-size: 1.2rem; }
   #soundBtn { font-size: 1rem; }
 }
-
-
