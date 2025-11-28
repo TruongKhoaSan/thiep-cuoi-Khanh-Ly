@@ -647,16 +647,16 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
 
 .timeline-content h3 {
   margin: 6px 0;
-  font-size: 17px;
+  font-size: 14px;
   color: #ff6f91;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: "Pacifico", cursive;
 }
 
 /* Chữ đẹp hơn */
 .story {
   font-size: 16px;
   color: #ff4d6d;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: "Pacifico", cursive;
   line-height: 1.6;
   white-space: pre-line;
   overflow-wrap: break-word;
@@ -732,7 +732,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
 
 .wish-form input,
 .wish-form textarea {
-    width: 100%;
+    width: 300px;
     padding: 12px 15px;
     margin-bottom: 12px;
     border: 2px solid #ffd2df;
