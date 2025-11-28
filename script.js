@@ -71,7 +71,7 @@ function createHeart() {
 
     const heart = document.createElement("div");
     heart.classList.add("heart");
-    heart.innerHTML = "💗";
+    heart.innerHTML = "❤️";
     heart.style.left = Math.random() * 100 + "vw";
     const size = Math.random() * 20 + 10;
     heart.style.fontSize = size + "px";
