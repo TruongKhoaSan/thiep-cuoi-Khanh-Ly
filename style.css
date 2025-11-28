@@ -648,7 +648,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
 
 .timeline-content h3 {
   margin: 6px 0;
-  font-size: 20px;
+  font-size: 17px;
   color: #e22a55;
   font-weight: 500;
   font-family: "Pacifico", cursive;
@@ -1113,3 +1113,4 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.5);  */
   .video-title h2 { font-size: 1.2rem; }
   #soundBtn { font-size: 1rem; }
 }
+
